@@ -19,6 +19,9 @@ import '@/directives/index.js';
 import device from "vue-device-detector"
 Vue.use(device)
 
+// Lottie
+
+
 
 // Using Vuesax
 import Vuesax from 'vuesax'

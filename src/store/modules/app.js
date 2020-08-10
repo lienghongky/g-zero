@@ -32,18 +32,26 @@ tabs:[
         path:'/more'
         }
     }
-  ]
+  ],
+  bot:{
+    messages:'Im Here to help! I can show you around!'
+  }
 }
 const mutations = {
-
+  SET_BOT:(state,payload)=>{
+    state.bot = payload
+  }
 }
 const actions = {
-  
+  setBot({commit,dispatch},payload){
+    commit('SET_BOT',payload)
+  }
 
 }
 
 const getters = {
-  tabs: state => state.tabs
+  tabs: state => state.tabs,
+  bot: state => state.bot
 }
 
 export default {

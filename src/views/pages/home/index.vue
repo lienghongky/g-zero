@@ -1,23 +1,40 @@
 <template>
-    <div>
-        
-        <div class="overflow-hidden h-full w-ful bg-red-400">
-            <div class="fixed top-0 right-0">
-                <router-link :to="{name:'Service'}"> <ic :icon="'ic_linkedin'" /></router-link>
-            </div>
-            <img class="object-fill overflow-hidden" src="@/assets/images/bg_sand.jpg" alt="">
-        </div>
-        
-        
+<div class="flex justify-center items-center">
+
+    <div class=" w-full h-full flex justify-center items-start">
+        <h2 v-bot:html="'<p>hi<span>HONGKY</span></p>'" @click="logoClick" class="text-center text-md text-gray-700"><span class="text-black text-5xl">G</span>
+            -Zero
+        </h2>
     </div>
+
+
+</div>
 </template>
 
 <script>
-    export default {
+export default {
+    data() {
+        return {
+            isAnimating: false,
+            positions: []
+        }
+    },
+    computed: {},
+    mounted() {
+
+    },
+    methods: {
+        setAnimController(e) {
+
+        },
+        logoClick(){
+            this.$store.dispatch('App/setBot',{messages:null})
+        }
         
     }
+}
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>

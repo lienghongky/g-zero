@@ -11,13 +11,8 @@
                             <h4 class="text-sm text-black m-0 items-baseline align-baseline">G-ZERO</h4>
                         </div>
                     </div>
-                    <router-link class="hidden sm:block" :to="{name:'Home-index'}">
-                            <vs-tooltip right>
-                                 <ic class="text-gray-900 icon-md" :icon="'logo'" />
-                                <template #tooltip>
-                                    Home
-                                </template>
-                            </vs-tooltip>
+                    <router-link class="hidden sm:block" :to="{name:'Home'}">
+                            <ic class="text-gray-900 icon-md" :icon="'logo'" />
                     </router-link>
                     <div class="hidden  sm:flex w-full justify-center" v-for="(item, index) in routes" :key="index" >
                         <router-link :to="item.path">
