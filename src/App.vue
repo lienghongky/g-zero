@@ -3,6 +3,13 @@
     <router-view class="h-screen" />
   </div>
 </template>
+<script>
+export default {
+  mounted(){
+    window.scrollTo(0,1)
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

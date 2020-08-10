@@ -5,19 +5,25 @@
         <div class="fixed w-screen bg-transparent sm:absolute sm:block sm:w-auto sm:h-screen sm:inset-y-0 left-0  sm:bg-gray-300">
             <div class="flex flex-row sm:flex-col justify-between h-full">
                 <div class="p-1 sm:px-2 sm:pt-2 flex flex-col justify-center">
-                    <div class="sm:hidden flex items-center">
-                        <vs-button icon color="dark">
-                            <ic :icon="'ic_linkedin'" />
-                        </vs-button>
-                        <div class="flex-1 flex justify-center">
-                            <h4 class="text-sm text-black">G-ZERO</h4>
+                    <div class="sm:hidden flex items-center py-4">
+                        <ic class="text-gray-800 px-2" :icon="'logo'" />
+                        <div class="flex-1 flex justify-center ">
+                            <h4 class="text-sm text-black m-0 items-baseline align-baseline">G-ZERO</h4>
                         </div>
                     </div>
+                    <router-link class="hidden sm:block" :to="{name:'Home-index'}">
+                            <vs-tooltip right>
+                                 <ic class="text-gray-900 icon-md" :icon="'logo'" />
+                                <template #tooltip>
+                                    Home
+                                </template>
+                            </vs-tooltip>
+                    </router-link>
                     <div class="hidden  sm:flex w-full justify-center" v-for="(item, index) in routes" :key="index" >
                         <router-link :to="item.path">
                             <vs-tooltip right>
-                                <vs-button icon color="dark">
-                                    <ic :icon="item.meta.icon" />
+                                <vs-button size="mini" circle icon color="dark">
+                                    <!-- <ic style="height:20px;width:20px;" :icon="item.meta.icon" /> -->
                                 </vs-button>
                                 <template #tooltip>
                                     {{item.meta.title}}
@@ -47,11 +53,11 @@
     <transition name="fade">
         <div class="sm:hidden fixed bottom-0 w-screen  inset-x-0  bg-gray-300 bg-opacity-90 flex shadow-md pt-2 pb-4">
             <div class="flex w-full justify-center" v-for="(item, index) in tabs" :key="index">
-                <router-link class="text-gray-700" :to="{name:item.route.name}">
-                    <vs-button transparent dark :active="active == index" @click="active = index">
+                <router-link class="text-gray-500" :to="{name:item.route.name}" >
+                    <div :class="{'text-black transform scale-105 transition duration-150 ease-in-out':index==active}" @click="active=index">
                         <ic :icon="item.icon" />
-                    </vs-button>
-                    <p class="text-xs m-0 p-0">{{item.title}}</p>
+                        <p class="text-xs m-0 p-0">{{item.title}}</p>
+                    </div>
                 </router-link>
             </div>
         </div>
