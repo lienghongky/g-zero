@@ -13,7 +13,7 @@
                             <h4 class="text-sm text-black">G-ZERO</h4>
                         </div>
                     </div>
-                    <div class="hidden  sm:flex w-full justify-center" v-for="(item, index) in $router.options.routes" :key="index">
+                    <div class="hidden  sm:flex w-full justify-center" v-for="(item, index) in routes" :key="index" >
                         <router-link :to="item.path">
                             <vs-tooltip right>
                                 <vs-button icon color="dark">
@@ -44,8 +44,8 @@
     </transition>
     <!-- END Header -->
     <!-- Footer -->
-    <transition enter-active-class="animate__animated animate__fadeInUp" leave-active-class="animate__animated animate__fadeInDown">
-        <div class="sm:hidden fixed bottom-0 w-screen  inset-x-0  bg-gray-300 bg-opacity-90 flex shadow-md pt-4 pb-2">
+    <transition name="fade">
+        <div class="sm:hidden fixed bottom-0 w-screen  inset-x-0  bg-gray-300 bg-opacity-90 flex shadow-md pt-2 pb-4">
             <div class="flex w-full justify-center" v-for="(item, index) in tabs" :key="index">
                 <router-link class="text-gray-700" :to="{name:item.route.name}">
                     <vs-button transparent dark :active="active == index" @click="active = index">
@@ -58,7 +58,7 @@
     </transition>
     <!-- END Footer -->
     <div class="h-full w-full">
-        <transition mode="out-in" enter-active-class="animate__animated animate__fadeIn" leave-active-class="animate__animated animate__fadeOut">
+        <transition name="fade">
             <router-view class="h-full sm:p-0"></router-view>
         </transition>
     </div>
@@ -67,10 +67,10 @@
 </template>
 
 <script>
-import {
-    getDevice,
-    isDevice
-} from '@/utils/devices'
+// import {
+//     getDevice,
+//     isDevice
+// } from '@/utils/devices'
 
 import { mapGetters } from 'vuex'
 export default {
@@ -80,7 +80,10 @@ export default {
     computed:{
         ...mapGetters({
             tabs:'App/tabs'
-        })
+        }),
+        routes(){
+            return this.$router.options.routes.filter(e => e.meta != undefined)
+        }
     },
     mounted() {
 
@@ -88,6 +91,11 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-
+<style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 </style>

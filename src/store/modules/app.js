@@ -4,7 +4,7 @@ tabs:[
       title:'Home',
       icon:'face',
       route: {
-              name:'Home',
+              name:'Home-Index',
               path:'/'
               }
     },

@@ -47,6 +47,10 @@ const routes = [
       name: 'About-Index',
       component: () =>import(/* webpackChunkName: "about" */ "../views/pages/about")
     }]
+  },
+  {
+    path: '*',
+    redirect: '/'
   }
 ];
 
