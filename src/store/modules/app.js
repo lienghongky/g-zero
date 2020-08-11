@@ -1,5 +1,52 @@
 const state = {
-tabs:[
+  hightlights:[
+    {
+      icon:'ic_facebook',
+      color:'text-white',
+      background:'bg-blue-600',
+      title:'Facebook',
+      bot:{
+        html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">Hongky</span></p>'
+      }
+    },
+    {
+      icon:'ic_instagram',
+      color:'text-white',
+      background:'instagram',
+      title:'Instagram',
+      bot:{
+        html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">@hongkydev</span></p>'
+      }
+    },
+    {
+      icon:'ic_linkedin',
+      color:'text-blue-500',
+      background:'bg-blue-300',
+      title:'Linkedin',
+      bot:{
+        html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">Lieng Hongky</span></p>'
+      }
+    },
+    {
+      icon:'ic_telegram',
+      color:'text-blue-500',
+      background:'bg-blue-300',
+      title:'Telegram',
+      bot:{
+        html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">t.me/hongky.dev</span></p>'
+      }
+    },
+    {
+      icon:'ic_twitter',
+      color:'text-blue-500',
+      background:'bg-blue-300',
+      title:'Tweeter',
+      bot:{
+        html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">Hongky Lieng</span></p>'
+      }
+    }
+  ],
+  tabs:[
     {
       title:'Home',
       icon:'face',
@@ -34,7 +81,7 @@ tabs:[
     }
   ],
   bot:{
-    botData:{messages:'Im Here to help! I can show you around!'},
+    botData:{messages:'Click me to let me help! I can show you around!'},
     position:{},
     moveable:false
   }
@@ -64,6 +111,7 @@ const actions = {
 }
 
 const getters = {
+  hightlights: state => state.hightlights,
   tabs: state => state.tabs,
   bot: state => state.bot.botData,
   botPosition: state => state.bot.position,

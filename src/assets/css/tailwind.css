@@ -10,7 +10,7 @@
 
 .page{
     padding-top:50px ;
-    padding-bottom: 50px;
+    padding-bottom: 70px;
 }
 
 .icon-sm{
@@ -29,3 +29,9 @@
     width: 5em !important;
     height: 5em !important;
 }
+
+.instagram { 
+    overflow: hidden;
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  }

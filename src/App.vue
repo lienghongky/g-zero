@@ -64,7 +64,7 @@ export default {
     methods: {
         freeBot(e){
             // console.log(e)
-            this.$store.dispatch('App/setBotMoveable',true);
+            this.$store.dispatch('App/setBotMoveable',!this.moveable);
         },
         hovers(event) {
             
@@ -85,8 +85,8 @@ export default {
                 //console.log(this.$refs.robot.getBoundingClientRect())
                 var dw = 0//this.$refs.robot.getBoundingClientRect().width/2 || 0
                 // console.log('bot pose',this.botPosition)
-                this.$refs.robot.setAttribute("style", "top: " + (this.botPosition.y || 200) +
-                            "px; left: " + (this.botPosition.x - dw) || 200 + "px;")
+                this.$refs.robot.setAttribute("style", "top: " + this.botPosition.y +
+                            "px; left: " + this.botPosition.x + "px;")
             }
         }
     }

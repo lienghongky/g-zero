@@ -10,6 +10,17 @@ module.exports = {
         textColor: ['responsive', 'hover', 'focus', 'group-hover'],
       },
     theme: {
+        borderRadius: {
+            'none': '0',
+            'sm': '0.125rem',
+            default: '0.25rem',
+            default: '4px',
+            'md': '0.375rem',
+            'lg': '0.5rem',
+            'full': '9999px',
+            'large': '12px',
+            'xl': '2rem',
+        },
         zIndex: {
             '0': 0,
            '10': 10,
@@ -56,6 +67,9 @@ module.exports = {
             '1': '1px',
             '2': '2px',
             '4': '4px',
+            '6': '6px',
+            '8': '8px',
+            '10': '10px',
         },
         boxShadow: {
             default: '0 1px 3px 0 rgba(0, 0, 0, .1), 0 0px 2px 0 rgba(0, 0, 0, .06)',
