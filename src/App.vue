@@ -98,7 +98,7 @@ a {
 
 @keyframes cursorAnim {
     from {
-        transform: translateY(1.1)
+        transform: translateY(1.2)
     }
 
     to {

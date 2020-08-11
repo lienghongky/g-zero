@@ -12,7 +12,6 @@ export const bot =  {
            if(arg == 'messages'){
             vnode.context.$store.dispatch('App/setBot',{messages:value})
            }else if(arg == 'html'){
-               console.log(el)
             vnode.context.$store.dispatch('App/setBot',{html:value})
            }else{
             vnode.context.$store.dispatch('App/setBot',value)
