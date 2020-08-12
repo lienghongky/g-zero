@@ -1,6 +1,7 @@
 const state = {
         botData:{messages:'Click me to let me help! I can show you around!'},
         position:{},
+        element:{},
         terminal:{
             show: true
         },
@@ -25,7 +26,12 @@ const state = {
     },
     SET_BOT_TERMINAL_SHOW:(state,payload)=>{
       state.terminal.show = payload
-    }
+    },
+    SET_BOT_ELEMENT:(state,payload)=>{
+      state.element = payload
+      state.position = payload.botPosition
+    },
+
   }
   const actions = {
     setBot({commit,dispatch},payload){
@@ -39,7 +45,10 @@ const state = {
     },
     setBotTerminalShow({commit,dispatch},payload){
         commit('SET_BOT_TERMINAL_SHOW',payload)
-      }
+    },
+    setBotElement({commit,dispatch},payload){
+        commit('SET_BOT_ELEMENT',payload)
+    }
 
   }
   

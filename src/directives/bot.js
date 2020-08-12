@@ -36,7 +36,7 @@ export const bot =  {
         el.addEventListener('mouseleave', function() {
             // console.log('leave')
             // setTimeout(() => {
-                vnode.context.$store.dispatch('Bot/setBotTerminalShow',false)
+                // vnode.context.$store.dispatch('Bot/setBotTerminalShow',false)
                 vnode.context.$store.dispatch('Bot/setBot',{messages:null, html:null})
             // }, 0);
         });
