@@ -4,10 +4,10 @@ export const bot =  {
         const { value,arg,modifiers } = binding
         if(!el){return}
         if(modifiers.init){
-            console.log(el.getBoundingClientRect())
-            var x = el.getBoundingClientRect().right || 200;
+            //console.log(el.getBoundingClientRect())
+            var x = el.getBoundingClientRect().right - el.getBoundingClientRect().width/2 || 200;
             var y = el.getBoundingClientRect().top || 200;
-            vnode.context.$store.dispatch('App/setBotPosition',{x:x,y:y})
+            vnode.context.$store.dispatch('Bot/setBotPosition',{x:x,y:y})
         }
     },
     update() {
@@ -17,23 +17,28 @@ export const bot =  {
         if(!el){return}
         el.addEventListener('mouseenter', function() {
             const { value,arg,modifiers } = binding
-            // console.log(vnode.context.$store.getters)
-           if( true){
-            if(arg == 'text'){
-                vnode.context.$store.dispatch('App/setBot',{messages:value})
-               }else if(arg == 'html'){
-                vnode.context.$store.dispatch('App/setBot',{html:value})
-               }else{
-                vnode.context.$store.dispatch('App/setBot',value)
-               }
+            // console.log(vnode.context.$store.getters['Bot/terminal'].show)
+           if(!vnode.context.$store.getters['Bot/terminal'].show){
+                vnode.context.$store.dispatch('Bot/setBotTerminalShow',true)
            }
+        //    console.log('ender')
+            if(arg == 'text'){
+                vnode.context.$store.dispatch('Bot/setBot',{messages:value})
+            }else if(arg == 'html'){
+                vnode.context.$store.dispatch('Bot/setBot',{html:value})
+            }else{
+                vnode.context.$store.dispatch('Bot/setBot',value)
+            }
+           
            
            
         });
         el.addEventListener('mouseleave', function() {
-            setTimeout(() => {
-                vnode.context.$store.dispatch('App/setBot',{messages:null, html:null})
-            }, 0);
+            // console.log('leave')
+            // setTimeout(() => {
+                vnode.context.$store.dispatch('Bot/setBotTerminalShow',false)
+                vnode.context.$store.dispatch('Bot/setBot',{messages:null, html:null})
+            // }, 0);
         });
     },
     unbind(el,binding,vnode){

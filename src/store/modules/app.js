@@ -1,4 +1,49 @@
 const state = {
+  subTabs: [{
+    icon:'ic_facebook_solid',
+    color:'text-white',
+    background:'bg-blue-600',
+    title:'Facebook',
+    bot:{
+      html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">Hongky</span></p>'
+    }
+  },
+  {
+    icon:'ic_instagram_solid',
+    color:'text-white',
+    background:'bg-instagram',
+    title:'Instagram',
+    bot:{
+      html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">@hongkydev</span></p>'
+    }
+  },
+  {
+    icon:'ic_linkedin_solid',
+    color:'text-white',
+    background:'bg-blue-300',
+    title:'Linkedin',
+    bot:{
+      html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">Lieng Hongky</span></p>'
+    }
+  },
+  {
+    icon:'ic_telegram_solid',
+    color:'text-white',
+    background:'bg-telegram',
+    title:'Telegram',
+    bot:{
+      html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">t.me/hongky.dev</span></p>'
+    }
+  },
+  {
+    icon:'ic_twitter_solid',
+    color:'text-white',
+    background:'bg-twitter',
+    title:'Tweeter',
+    bot:{
+      html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">Hongky Lieng</span></p>'
+    }
+  }],
   hightlights:[
     {
       icon:'ic_facebook',
@@ -12,7 +57,7 @@ const state = {
     {
       icon:'ic_instagram',
       color:'text-white',
-      background:'instagram',
+      background:'bg-instagram',
       title:'Instagram',
       bot:{
         html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">@hongkydev</span></p>'
@@ -20,7 +65,7 @@ const state = {
     },
     {
       icon:'ic_linkedin',
-      color:'text-blue-500',
+      color:'text-white',
       background:'bg-blue-300',
       title:'Linkedin',
       bot:{
@@ -29,8 +74,8 @@ const state = {
     },
     {
       icon:'ic_telegram',
-      color:'text-blue-500',
-      background:'bg-blue-300',
+      color:'text-white',
+      background:'bg-telegram',
       title:'Telegram',
       bot:{
         html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">t.me/hongky.dev</span></p>'
@@ -38,8 +83,8 @@ const state = {
     },
     {
       icon:'ic_twitter',
-      color:'text-blue-500',
-      background:'bg-blue-300',
+      color:'text-white',
+      background:'bg-twitter',
       title:'Tweeter',
       bot:{
         html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">Hongky Lieng</span></p>'
@@ -83,7 +128,7 @@ const state = {
   bot:{
     botData:{messages:'Click me to let me help! I can show you around!'},
     position:{},
-    moveable:false
+    moveable:true
   }
 }
 const mutations = {
@@ -113,6 +158,7 @@ const actions = {
 const getters = {
   hightlights: state => state.hightlights,
   tabs: state => state.tabs,
+  subTabs: state => state.subTabs,
   bot: state => state.bot.botData,
   botPosition: state => state.bot.position,
   botMoveable: state => state.bot.moveable

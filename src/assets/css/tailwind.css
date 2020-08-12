@@ -30,8 +30,18 @@
     height: 5em !important;
 }
 
-.instagram { 
+.bg-instagram { 
     overflow: hidden;
     background: #d6249f;
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-  }
+}
+.bg-twitter {
+    background: #1DA1F2;
+}
+.bg-telegram{
+    background: #0088cc;
+}
+
+.bg-linkedin{
+    background: #0072b1;
+}
