@@ -2,14 +2,20 @@
 <div class="bg-gray-700 overflow-y-scroll h-full content-between z-50">
     <div class="flex flex-wrap sm:flex-no-wrap justify-center items-center  ">
         <div class="w-full sm:w-1/2  sm:h-full sm:pl-20">
-            <h3 class="title -mb-4 text-gray-900 text-opacity-75 text-left">Welcome!</h3>
-            <h3 class="text-5xl mt-0 px-4 text-white bg-gray-800 flex text-opacity-75 text-left">G-zero <span v-bot:text.init="'CITY Plan You may use special comments to disable some warnings.Use <br/>Use to ignore all warnings in a file.'"></span></h3>
+            <h3 class="title m-0 text-gray-900 text-opacity-75 text-left">Welcome!</h3>
+            <h3 class="text-xl -mt-4 px-4 text-white bg-gray-800 flex text-opacity-75 text-left">G-zero <span v-bot:text.init="'CITY Plan You may use special comments to disable some warnings.Use <br/>Use to ignore all warnings in a file.'"></span></h3>
+             <!-- <div class="flex rounded-full bg-gray-800 p-2 relative">
+                <vs-input class="w-full"  placeholder="Name" />
+                <div class="absolute right-0 -top-2 rounded-lg w-10 h-10 flex items-center justify-center bg-gray-600 shadow-lg">
+                    <ic icon="ic_instagram_solid"/>
+                </div>
+             </div> -->
         </div>
         <div class="w-full sm:w-1/2 flex flex-col justify-center items-start py-20">
-            <lottie path="botHightLight" :loop="true" :autoPlay="true" :loopDelayMin="0" :loopDelayMax="0" :speed="1" :height="300" :width="400" />
+            <!-- <lottie path="dev" :loop="true" :autoPlay="true" :loopDelayMin="0" :loopDelayMax="0" :speed="1" :height="300" :width="400" /> -->
             <div class="flex justify-center w-full space-x-6">
-                <div @mousedown="avatarSelect(item)" @mouseenter="mouseenter" @mouseleave="mouseleave" :class="{'border-green-500 shadow-3xl':avatar==item}" class="floating hover:translate-y-10 hover:shadow-3xl border-gray-500 hover:border-blue-600 border-solid rounded-xl w-32 h-48 bg-gray-300 bg-opacity-25 shadow-xl flex justify-center items-center" v-for="(item, index) in ['robot','botv2']" :key="index">
-                    <lottie :path="item" :loop="true" :autoPlay="isAnimating" :loopDelayMin="0" :loopDelayMax="0" :speed="1" :height="100" :width="100" />
+                <div @mousedown="avatarSelect(item)" @mouseenter="mouseenter" @mouseleave="mouseleave" :class="{'border-green-500 shadow-3xl':avatar==item}" class="floating hover:translate-y-10 hover:shadow-3xl border-gray-500 hover:border-blue-600 border-solid rounded-xl w-24 h-32 bg-gray-300 bg-opacity-25 shadow-xl flex justify-center items-center" v-for="(item, index) in ['robot','botv2']" :key="index">
+                    <lottie :path="item" :loop="true" :autoPlay="isAnimating" :loopDelayMin="0" :loopDelayMax="0" :speed="1" :height="70" :width="70" />
                 </div>
             </div>
         </div>
@@ -91,6 +97,6 @@ export default {
 }
 
 .title {
-    font-size: 5rem;
+    font-size: 3rem;
 }
 </style>

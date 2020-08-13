@@ -20,22 +20,22 @@ const routes = [
           {
             path:'index',
             name:'Home-Index',
-            component:() => import('../views/pages/info/home')
+            component:() => import(/* webpackChunkName: "home" */ '../views/pages/info/home')
           },
           {
             path:'service',
             name:'Service',
-            component:() => import('../views/pages/info/service')
+            component:() => import(/* webpackChunkName: "service" */'../views/pages/info/service')
           },
           {
             path:'product',
             name:'Product',
-            component:() => import('../views/pages/info/product')
+            component:() => import(/* webpackChunkName: "product" */'../views/pages/info/product')
           },
           {
             path:'more',
             name:'More',
-            component:() => import('../views/pages/info/more')
+            component:() => import(/* webpackChunkName: "more" */'../views/pages/info/more')
           }
         ]
       },

@@ -1,5 +1,5 @@
 <template>
-<div @click="lockBot" class="robot z-102">
+<div @click="lockBot" class="robot z-200">
     <lottie :path="avatar" :loop="true" :autoPlay="true" :loopDelayMin="0" :loopDelayMax="0" :speed="1" :height="100" :width="100" />
 </div>
 </template>
@@ -87,7 +87,7 @@ export default {
                 if (tx > 0 && ty > 0) deg = 45 //Math.floor(Math.random() * 90);
                 else if (tx < 0 && ty > 0) {
                     deg = 135;
-                    r = this.reduis * 2;
+                    r = this.reduis * 1.5;
                 } //Math.floor(Math.random() * 90)+90;
                 else if (tx < 0 && ty < 0) deg = 200 //Math.floor(Math.random() * 90)+180;
                 else if (tx > 0 && ty < 0) deg = 315 //Math.floor(Math.random() * 90)+270;
@@ -206,6 +206,7 @@ export default {
             }
         },
         lockBot() {
+            this.$store.dispatch('Bot/setBot',{messages:"Tap on me to unlock me! please!"})
             this.$store.dispatch('Bot/setBotMoveable', !this.moveable)
         },
         copyToClipboard(text) {

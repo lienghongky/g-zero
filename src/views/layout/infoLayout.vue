@@ -5,7 +5,7 @@
         <div class="hidden sm:block fixed bottom-10 left-10 " :key="'1'">
             <tabs/>
         </div>
-        <div class="z-100 sm:hidden fixed bottom-0 w-screen  inset-x-0  bg-gray-600  flex shadow-md pt-2 pb-4 bg-opacity-90" :key="'2'">
+        <div class="sm:hidden fixed bottom-0 w-screen  inset-x-0  bg-gray-600  flex shadow-md pt-2 pb-4 bg-opacity-90" :key="'2'">
             <div class="flex w-full justify-center" v-for="(item, index) in tabs" :key="index">
                 <router-link class="text-gray-500" :to="{name:item.route.name}" >
                     <div :class="{'text-black transform scale-105 transition duration-150 ease-in-out':index==active}" @click="active=index">

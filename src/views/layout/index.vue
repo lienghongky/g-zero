@@ -2,7 +2,7 @@
 <div class="h-screen bg-gray-200 z-100 relative">
     <!-- Header -->
     <transition enter-active-class="animate__animated animate__rotateInDownLeft" leave-active-class="animate__animated animate__rotateInUpLeft">
-        <div class="z-100 fixed w-screen bg-transparent sm:absolute sm:block sm:w-auto sm:h-screen sm:inset-y-0 left-0  sm:bg-white sm:bg-opacity-25 sm:shadow-lg">
+        <div class="z-100 fixed w-screen bg-transparent sm:absolute sm:block sm:w-auto sm:h-screen sm:inset-y-0 left-0  sm:bg-white sm:bg-opacity-0 sm:shadow-lg">
             <div class="flex flex-row sm:flex-col justify-between h-full">
                 <div class="p-1 sm:px-2 sm:pt-2 flex flex-col justify-center">
                     <!-- mobile only -->
@@ -29,9 +29,9 @@
                         </router-link>
                     </div>
                 </div>
-                <div class="z-100 hidden sm:block p-2 self-center ">
+                <div class="hidden sm:block p-2 self-center ">
                     <router-link v-bot:html="item.bot.html" class="block my-2 text-black" :to="'/'" v-for="(item, index) in subTabs" :key="index">
-                          <ic class="text-gray-700 hover:text-gray-200 icon-sm py-2 " :icon="item.icon"/>
+                          <ic class="text-gray-800 hover:text-gray-200 icon-sm py-2 " :icon="item.icon"/>
                     </router-link>
                 </div>
             </div>
@@ -40,7 +40,7 @@
     <!-- END Header -->
     <div class="h-full w-auto">
         <transition name="fade">
-            <router-view class="h-full overflow-hidden"></router-view>
+            <router-view class="h-full overflow-hidden z-90"></router-view>
         </transition>
     </div>
 
