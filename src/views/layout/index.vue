@@ -6,12 +6,12 @@
             <div class="flex flex-row sm:flex-col justify-between h-full">
                 <div class="p-1 sm:px-2 sm:pt-2 flex flex-col justify-center">
                     <!-- mobile only -->
-                    <div class="sm:hidden flex items-center py-4">
+                    <router-link :to="{name:'Home'}" class="sm:hidden flex items-center py-4">
                         <ic class="text-gray-800 px-2" :icon="'logo'" />
                         <div class="flex-1 flex justify-center ">
                             <h4 class="text-sm text-black m-0 items-baseline align-baseline">G-ZERO</h4>
                         </div>
-                    </div>
+                    </router-link>
                     <!-- END mobile only -->
                     <router-link class="hidden sm:block" :to="{name:'Home'}">
                             <ic class="text-gray-900 icon-md" :icon="'logo'" />
@@ -79,7 +79,7 @@ export default {
 
 <style scoped>
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .2s;
+  transition: opacity .5s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;

@@ -1,7 +1,6 @@
 <template>
-    <div>
-        here is all product thing belong
-        
+     <div class="bg-red-500 overflow-y-scroll h-full content-between z-50">
+            More thing going on here
     </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
 <div class="h-screen bg-gray-200 z-90 relative">
     <!-- Footer -->
-    <transition-group name="fade" >
+    <!-- <transition-group enter-active-class="animate__animated animate__fadeIn" leave-active-class="animate__animated animate__fadeOut"> -->
         <div class="hidden sm:block fixed bottom-10 left-10 " :key="'1'">
             <tabs/>
         </div>
@@ -15,11 +15,11 @@
                 </router-link>
             </div>
         </div>
-    </transition-group>
+    <!-- </transition-group> -->
     <!-- END Footer -->
     <div class="h-full w-auto">
-        <transition name="fade">
-            <router-view class="h-full overflow-hidden"></router-view>
+        <transition name="animate">
+            <router-view class="z-50 h-full overflow-hidden"></router-view>
         </transition>
     </div>
 
@@ -57,10 +57,44 @@ export default {
 </script>
 
 <style scoped>
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .2s;
+.animate-enter-active{
+  animation: in 1s ease-in-out;
+  animation-delay: 1s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
+.animate-leave-active {
+    animation: out 1s ease-in-out;
+
+    
+ }
+@keyframes in {
+    from{
+        transform: translateX(45px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
+ @keyframes out {
+     from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(45px);
+        background: black;
+        opacity: 0;
+        
+    }
+ }
+/* .animate-enter{
+    animation: in2 2s ease-in-out;
+    animation-delay: 2s;
+    background: black;
+}
+.animate-leave-to{
+    animation: out2 2s ease-in-out;
+    animation-delay: 2s;
+    background: white;
+} */
 </style>

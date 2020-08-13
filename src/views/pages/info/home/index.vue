@@ -1,5 +1,5 @@
 <template>
-<div class="bg-gray-700 overflow-y-scroll h-full content-between z-50">
+<div class="bg-orange-500 overflow-y-scroll h-full content-between z-50">
     <div class="flex flex-wrap sm:flex-no-wrap justify-center items-center  ">
         <div class="w-full sm:w-1/2  sm:h-full sm:pl-20">
             <h3 class="title m-0 text-gray-900 text-opacity-75 text-left">Welcome!</h3>
@@ -12,7 +12,7 @@
              </div> -->
         </div>
         <div class="w-full sm:w-1/2 flex flex-col justify-center items-start py-20">
-            <!-- <lottie path="dev" :loop="true" :autoPlay="true" :loopDelayMin="0" :loopDelayMax="0" :speed="1" :height="300" :width="400" /> -->
+            <lottie path="dev" :loop="true" :autoPlay="true" :loopDelayMin="0" :loopDelayMax="0" :speed="1" :height="300" :width="400" />
             <div class="flex justify-center w-full space-x-6">
                 <div @mousedown="avatarSelect(item)" @mouseenter="mouseenter" @mouseleave="mouseleave" :class="{'border-green-500 shadow-3xl':avatar==item}" class="floating hover:translate-y-10 hover:shadow-3xl border-gray-500 hover:border-blue-600 border-solid rounded-xl w-24 h-32 bg-gray-300 bg-opacity-25 shadow-xl flex justify-center items-center" v-for="(item, index) in ['robot','botv2']" :key="index">
                     <lottie :path="item" :loop="true" :autoPlay="isAnimating" :loopDelayMin="0" :loopDelayMax="0" :speed="1" :height="70" :width="70" />

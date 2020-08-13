@@ -1,9 +1,9 @@
 <template>
-     <div class="flex sm:pl-20 items-end space-x-1">
-        <router-link :to="{name:item.route.name}" v-for="(item, index) in tabs" :key="index">
-            <div @click="selectedTab = index" :class="{'bg-opacity-25':index == selectedTab}" v-bot:text="item.title" class="hidden floating sm:flex sm:flex-wrap sm:h-32 w-1/4 sm:w-24 bg-gray-900 bg-opacity-0 shadow-3xl hover:bg-opacity-25  items-center justify-center p-4" >
-                <ic :class="{'text-gray-200':index == selectedTab}" class="w-full icon-md text-gray-500" :icon="item.icon"/>
-                <p  :class="{'text-gray-200':index == selectedTab}" class="w-full text-sm m-0 py-2 text-gray-500 text-center">{{item.title}}</p>
+     <div class="z-100 flex sm:pl-20 items-end space-x-1">
+        <router-link class="floating" :to="{name:item.route.name}" v-for="(item, index) in tabs" :key="index">
+            <div @click="selectedTab = index" :class="{'bg-gray-900 bg-opacity-25 transition duration-75 transform -translate-y-4':index == selectedTab}" v-bot:text="item.title" class=" hidden  sm:flex sm:flex-wrap sm:h-32 w-1/4 sm:w-24 bg-white bg-opacity-5 shadow-3xl hover:bg-opacity-25 transform hover:-translate-y-4  items-center justify-center p-4" >
+                <ic :class="{'text-gray-200':index == selectedTab}" class="w-full icon-md text-white" :icon="item.icon"/>
+                <p  :class="{'text-gray-200':index == selectedTab}" class="w-full text-sm m-0 py-2 text-white text-center">{{item.title}}</p>
             </div>
         </router-link>
     </div>
