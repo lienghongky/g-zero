@@ -1,7 +1,7 @@
 <template>
 <div id="app" class="p-0 m-0">
     <router-view class="z-40 overflow-hidden" />
-    <bot @mousedown="freeBot" @onBotMove="onBotMove" @onEnterOffsetArea="onEnterOffsetArea"/>
+    <bot class="z-200" @mousedown="freeBot" @onBotMove="onBotMove" @onEnterOffsetArea="onEnterOffsetArea"/>
     <terminal v-if="terminal.show" :position="position" :contentType="contentType" :content="content"/>
 </div>
 </template>

@@ -11,9 +11,9 @@ const routes = [
     component:layout,
     children: [
       {
-        path: "",
+        path: "info",
         name: "Home",
-        redirect: '/index',
+        redirect: '/info/index',
         component: infoLayout,
         meta: {title:'Home', icon: 'ic_linkedin'},
         children: [
