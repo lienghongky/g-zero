@@ -1,32 +1,8 @@
 <template>
 <div id="app" class="p-0 m-0">
-    <router-view class="z-40" />
-    <bot @click="freeBot" @onBotMove="onBotMove" @onEnterOffsetArea="onEnterOffsetArea"/>
+    <router-view class="z-40 overflow-hidden" />
+    <bot @mousedown="freeBot" @onBotMove="onBotMove" @onEnterOffsetArea="onEnterOffsetArea"/>
     <terminal v-if="terminal.show" :position="position" :contentType="contentType" :content="content"/>
-    <!-- <div class="robot-terminal" ref="terminal">
-        <transition name="terminal" class="z-102">
-            <div v-if="terminal.show" class="terminal-card min-h-64 z-102 rounded-sm shadow-lg p-0 bg-gray-900 bg-opacity-75 text-white">
-                <div class="z-102 w-full h-2 bg-gray-400 rounded-sm rounded-br-none rounded-bl-none flex justify-start items-center space-x-1">
-                    <div class="bg-red-600 rounded-full w-1 h-1 ml-1" ></div>
-                    <div class="bg-yellow-600 rounded-full w-1 h-1" ></div>
-                    <div class="bg-green-600 rounded-full w-1 h-1" ></div>
-
-                </div>
-                <p v-if="speakingType=='text'" class="text-xs text-left max-w-xs min-h-10 m-0 p-3"> 
-                {{speaking}}
-                </p>
-                <div class="p-3" v-else-if="speakingType =='html'" v-html="speaking"></div>
-            </div>
-
-        </transition>
-    </div>
-    <div  ref="robot" class="robot z-101">
-        <div @click="freeBot" class="z-101 fixed">
-            <lottie  path="robot" :loop="true" :autoPlay="true" :loopDelayMin="0" :loopDelayMax="0" :speed="1" :height="100" :width="100"  />
-        </div>
-        
-      
-    </div> -->
 </div>
 </template>
 

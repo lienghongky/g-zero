@@ -1,11 +1,12 @@
 const state = {
         botData:{messages:'Click me to let me help! I can show you around!'},
-        position:{},
+        position:{x:0,y:0},
         element:{},
         terminal:{
             show: true
         },
-        moveable:true
+        moveable:true,
+        avatar:'botv2'
   }
   const mutations = {
     SET_BOT:(state,payload)=>{
@@ -31,6 +32,10 @@ const state = {
       state.element = payload
       state.position = payload.botPosition
     },
+    SET_BOT_AVATAR:(state,payload)=>{
+      state.avatar = payload
+      
+    },
 
   }
   const actions = {
@@ -48,7 +53,10 @@ const state = {
     },
     setBotElement({commit,dispatch},payload){
         commit('SET_BOT_ELEMENT',payload)
-    }
+    },
+    setBotAvatar({commit,dispatch},payload){
+        commit('SET_BOT_AVATAR',payload)
+    },
 
   }
   
@@ -56,7 +64,8 @@ const state = {
     bot: state => state.botData,
     position: state => state.position,
     moveable: state => state.moveable,
-    terminal: state => state.terminal
+    terminal: state => state.terminal,
+    avatar: state => state.avatar
   }
   
   export default {

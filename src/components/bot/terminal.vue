@@ -57,22 +57,22 @@
     position: absolute;
     transform: translateY(-100%) translateX(-30%);
     left: 50%;
-    min-width: 150px;
+    min-width: 80px;
     max-width: 300px;
     
-    min-height: 100px;
+    min-height: 60px;
     max-height: 200px;
     transition-duration: 0.8s;
     transition-timing-function: ease-in-out; 
-    /* animation: cursorAnim 5s infinite alternate; */
+    animation: cursorAnim 5s infinite alternate;
 }
 @keyframes cursorAnim {
     from {
-        transform: translateY(10px)
+        transform: translateY(-100%) translateX(0%) rotate3d(1,0,1, -0.5deg);
     }
 
     to {
-        transform: translateY(0px);
+        transform: translateY(-100%) translateX(-20%) rotate3d(1,0,1, 0.5deg);
     }
 }
 

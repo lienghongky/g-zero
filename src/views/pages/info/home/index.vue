@@ -1,0 +1,96 @@
+<template>
+<div class="bg-gray-700 overflow-y-scroll h-full content-between z-50">
+    <div class="flex flex-wrap sm:flex-no-wrap justify-center items-center  ">
+        <div class="w-full sm:w-1/2  sm:h-full sm:pl-20">
+            <h3 class="title -mb-4 text-gray-900 text-opacity-75 text-left">Welcome!</h3>
+            <h3 class="text-5xl mt-0 px-4 text-white bg-gray-800 flex text-opacity-75 text-left">G-zero <span v-bot:text.init="'CITY Plan You may use special comments to disable some warnings.Use <br/>Use to ignore all warnings in a file.'"></span></h3>
+        </div>
+        <div class="w-full sm:w-1/2 flex flex-col justify-center items-start py-20">
+            <lottie path="botHightLight" :loop="true" :autoPlay="true" :loopDelayMin="0" :loopDelayMax="0" :speed="1" :height="300" :width="400" />
+            <div class="flex justify-center w-full space-x-6">
+                <div @mousedown="avatarSelect(item)" @mouseenter="mouseenter" @mouseleave="mouseleave" :class="{'border-green-500 shadow-3xl':avatar==item}" class="floating hover:translate-y-10 hover:shadow-3xl border-gray-500 hover:border-blue-600 border-solid rounded-xl w-32 h-48 bg-gray-300 bg-opacity-25 shadow-xl flex justify-center items-center" v-for="(item, index) in ['robot','botv2']" :key="index">
+                    <lottie :path="item" :loop="true" :autoPlay="isAnimating" :loopDelayMin="0" :loopDelayMax="0" :speed="1" :height="100" :width="100" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</template>
+
+<script>
+import {
+    isDevice
+} from '@/utils/devices'
+import Carousel from '@/components/carousel'
+import {
+    mapGetters
+} from 'vuex'
+export default {
+    components: {
+        Carousel
+    },
+    data() {
+        return {
+            isAnimating: false,
+            positions: [],
+        }
+    },
+    computed: {
+        ...mapGetters({
+            hightlights: 'App/hightlights',
+            avatar: 'Bot/avatar'
+        }),
+        height() {
+            return isDevice('mobile') ? 400 : 600
+        }
+    },
+    mounted() {
+
+    },
+    methods: {
+        mouseenter(e) {
+            // console.log(e)
+            // e.anim.play()
+        },
+        mouseleave(e) {
+            // console.log(e)
+            // e.anim.pause()
+        },
+        avatarSelect(avatar) {
+            this.$store.dispatch('Bot/setBotAvatar', avatar)
+        },
+        setAnimController(e) {
+
+        },
+        logoClick() {
+            this.$store.dispatch('Bot/setBot', {
+                messages: null
+            })
+        }
+
+    },
+    watch: {
+
+    }
+}
+</script>
+
+<style scoped>
+.float--enter-active {
+    transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
+    transition: all;
+    animation: floating 1s infinite;
+}
+
+.float-leave-active {
+    transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
+    transition: all;
+    animation: floating 1s forwards;
+}
+
+.title {
+    font-size: 5rem;
+}
+</style>

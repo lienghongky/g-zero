@@ -98,7 +98,11 @@ const state = {
       route: {
               name:'Home-Index',
               path:'/'
-              }
+              },
+      bot:{
+        html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">Hongky</span></p>'
+      }
+              
     },
     {
       title:'Service',

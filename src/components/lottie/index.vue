@@ -1,5 +1,5 @@
 <template>
-  <div v-if="style" :style="style" ref="lavContainer"/>
+  <div @mouseenter="mouseenter" @mouseleave="mouseleave" v-if="style" :style="style" ref="lavContainer"/>
 </template>
 
 <script>
@@ -62,6 +62,12 @@ export default {
     this.init();
   },
   methods: {
+    mouseenter(e){
+      if (!this.autoPlay)this.anim.play()
+    },
+    mouseleave(e){
+     if (!this.autoPlay)this.anim.pause()
+    },
     async loadJsonData(path) {
         try{
             return require('@/assets/lotties/'+path+'.json')

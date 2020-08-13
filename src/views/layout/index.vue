@@ -1,5 +1,5 @@
 <template>
-<div class="h-screen bg-gray-200 z-100">
+<div class="h-screen bg-gray-200 z-100 relative">
     <!-- Header -->
     <transition enter-active-class="animate__animated animate__rotateInDownLeft" leave-active-class="animate__animated animate__rotateInUpLeft">
         <div class="z-100 fixed w-screen bg-transparent sm:absolute sm:block sm:w-auto sm:h-screen sm:inset-y-0 left-0  sm:bg-white sm:bg-opacity-25 sm:shadow-lg">
@@ -38,23 +38,9 @@
         </div>
     </transition>
     <!-- END Header -->
-    <!-- Footer -->
-    <transition name="fade">
-        <div class="z-100 sm:hidden fixed bottom-0 w-screen  inset-x-0  bg-gray-300 bg-opacity-90 flex shadow-md pt-2 pb-4">
-            <div class="flex w-full justify-center" v-for="(item, index) in tabs" :key="index">
-                <router-link class="text-gray-500" :to="{name:item.route.name}" >
-                    <div :class="{'text-black transform scale-105 transition duration-150 ease-in-out':index==active}" @click="active=index">
-                        <ic :icon="item.icon" />
-                        <p class="text-xs m-0 p-0">{{item.title}}</p>
-                    </div>
-                </router-link>
-            </div>
-        </div>
-    </transition>
-    <!-- END Footer -->
-    <div class="h-full w-full">
+    <div class="h-full w-auto">
         <transition name="fade">
-            <router-view class="h-full overflow-y-scroll sm:p-0 sm:pl-16"></router-view>
+            <router-view class="h-full overflow-hidden"></router-view>
         </transition>
     </div>
 
@@ -68,7 +54,11 @@
 // } from '@/utils/devices'
 
 import { mapGetters } from 'vuex'
+import Tabs from './tabs';
 export default {
+    components:{
+        Tabs
+    },
     data: () => ({
         active: 0
     }),

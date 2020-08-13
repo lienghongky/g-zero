@@ -1,37 +1,44 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import layout from '../views/layout'
+import layout from '@/views/layout';
+import infoLayout from '@/views/layout/infoLayout';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    redirect: '/index',
-    component: layout,
-    meta: {title:'Home', icon: 'ic_linkedin'},
+    path:'/',
+    component:layout,
     children: [
       {
-        path:'index',
-        name:'Home-Index',
-        component:() => import('../views/pages/home')
+        path: "",
+        name: "Home",
+        redirect: '/index',
+        component: infoLayout,
+        meta: {title:'Home', icon: 'ic_linkedin'},
+        children: [
+          {
+            path:'index',
+            name:'Home-Index',
+            component:() => import('../views/pages/info/home')
+          },
+          {
+            path:'service',
+            name:'Service',
+            component:() => import('../views/pages/info/service')
+          },
+          {
+            path:'product',
+            name:'Product',
+            component:() => import('../views/pages/info/product')
+          },
+          {
+            path:'more',
+            name:'More',
+            component:() => import('../views/pages/info/more')
+          }
+        ]
       },
-      {
-        path:'service',
-        name:'Service',
-        component:() => import('../views/pages/service')
-      },
-      {
-        path:'product',
-        name:'Product',
-        component:() => import('../views/pages/product')
-      },
-      {
-        path:'more',
-        name:'More',
-        component:() => import('../views/pages/more')
-      }
     ]
   },
   {
@@ -45,7 +52,7 @@ const routes = [
     children: [{
       path: '',
       name: 'About-Index',
-      component: () =>import(/* webpackChunkName: "about" */ "../views/pages/about")
+      component: () =>import(/* webpackChunkName: "about" */ "../views/pages/info/about")
     }]
   },
   {

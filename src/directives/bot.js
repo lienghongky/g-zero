@@ -5,8 +5,9 @@ export const bot =  {
         if(!el){return}
         if(modifiers.init){
             //console.log(el.getBoundingClientRect())
-            var x = el.getBoundingClientRect().right - el.getBoundingClientRect().width/2 || 200;
-            var y = el.getBoundingClientRect().top || 200;
+            var x = el.getBoundingClientRect().right;
+            var y = el.getBoundingClientRect().bottom || 200;
+            console.log(x,y)
             vnode.context.$store.dispatch('Bot/setBotPosition',{x:x,y:y})
         }
     },
@@ -18,7 +19,7 @@ export const bot =  {
         el.addEventListener('mouseenter', function() {
             const { value,arg,modifiers } = binding
             // console.log(vnode.context.$store.getters['Bot/terminal'].show)
-           if(!vnode.context.$store.getters['Bot/terminal'].show){
+           if(!vnode.context.$store.getters['Bot/terminal'].show && value != null){
                 vnode.context.$store.dispatch('Bot/setBotTerminalShow',true)
            }
         //    console.log('ender')
