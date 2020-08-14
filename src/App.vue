@@ -1,8 +1,9 @@
 <template>
-<div id="app" class="p-0 m-0">
-    <router-view class="z-40 overflow-hidden" />
-    <bot class="z-200" @mousedown="freeBot" @onBotMove="onBotMove" @onEnterOffsetArea="onEnterOffsetArea"/>
-    <terminal v-if="terminal.show" :position="position" :contentType="contentType" :content="content"/>
+<div id="app" class="p-0 m-0 overflow-x-hidden">
+    <router-view class="w-full h-full overflow-hidden" />
+
+    <bot v-if="!botHidden" class="z-200" @mousedown="freeBot" @onBotMove="onBotMove" @onEnterOffsetArea="onEnterOffsetArea"/>
+    <terminal v-if="terminal.show && !botHidden" :position="position" :contentType="contentType" :content="content"/>
 </div>
 </template>
 
@@ -26,7 +27,8 @@ export default {
         bot: 'Bot/bot',
         moveable: 'Bot/moveable',
         botPosition: 'Bot/position',
-        terminal:'Bot/terminal'
+        terminal:'Bot/terminal',
+        botHidden: 'Bot/hidden'
       }),
       contentType(){
           if(this.bot.messages != null && this.bot.messages != ''){
@@ -76,6 +78,7 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+    height: 100%;
 }
 
 html,
@@ -83,6 +86,7 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: sans-serif;
+    height: 100%;
 }
 
 a {

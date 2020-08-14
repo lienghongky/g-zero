@@ -1,6 +1,6 @@
 <template>
-    <div class="bg-blue-500 overflow-y-scroll h-full content-between z-50">
-            <router-link :to="{name:'About'}">
+    <div class="bg-blue-500 overflow-y-scroll h-full content-between flex justify-center items-center">
+            <router-link :to="'/about'">
                  <vs-button
                     danger
                     border

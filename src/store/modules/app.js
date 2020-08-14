@@ -48,7 +48,7 @@ const state = {
     {
       icon:'ic_facebook',
       color:'text-white',
-      background:'bg-blue-600',
+      background:'bg-facebook',
       title:'Facebook',
       bot:{
         html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">Hongky</span></p>'
@@ -66,7 +66,7 @@ const state = {
     {
       icon:'ic_linkedin',
       color:'text-white',
-      background:'bg-blue-300',
+      background:'bg-linkedin',
       title:'Linkedin',
       bot:{
         html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">Lieng Hongky</span></p>'

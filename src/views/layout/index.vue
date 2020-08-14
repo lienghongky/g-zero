@@ -1,5 +1,5 @@
 <template>
-<div class="h-screen bg-gray-200 z-100 relative">
+<div class="h-full w-full bg-gray-700 z-100">
     <!-- Header -->
     <transition enter-active-class="animate__animated animate__rotateInDownLeft" leave-active-class="animate__animated animate__rotateInUpLeft">
         <div class="z-100 fixed w-screen bg-transparent sm:absolute sm:block sm:w-auto sm:h-screen sm:inset-y-0 left-0  sm:bg-white sm:bg-opacity-0 sm:shadow-lg">
@@ -38,9 +38,9 @@
         </div>
     </transition>
     <!-- END Header -->
-    <div class="h-full w-auto">
-        <transition name="fade">
-            <router-view class="h-full overflow-hidden z-90"></router-view>
+    <div class="h-full w-full">
+        <transition name="animate">
+            <router-view ></router-view>
         </transition>
     </div>
 
@@ -78,10 +78,34 @@ export default {
 </script>
 
 <style scoped>
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+.animate-enter-active{
+  animation: in 1s ease-in-out;
+  animation-delay: 1s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
+.animate-leave-active {
+    animation: out 1s ease-in-out;
+
+    
+ }
+@keyframes in {
+    from{
+        transform: translateX(45px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
+ @keyframes out {
+     from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(45px);
+        background: black;
+        opacity: 0;
+        
+    }
+ }
 </style>

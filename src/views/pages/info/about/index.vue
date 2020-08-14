@@ -1,6 +1,6 @@
 <template>
-    <div class="bg-white overflow-y-auto">
-        <div class="flex flex-wrap p-8">
+    <div class="page bg-white overflow-y-auto flex flex-wrap">
+        <div class="w-full flex flex-wrap p-8">
             <div class="w-full sm:w-2/3 flex justify-center items-center">
                 <h1 class="text-4xl">Hello! let's stay connected</h1>
             </div>
@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-        <div class="sm:fixed sm:left-10 sm:pl-8 sm:bottom-4">
+        <div class="self-end sm:pl-20 sm:pb-20">
             <feature/>
         </div>
     </div>

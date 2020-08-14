@@ -1,5 +1,5 @@
 <template>
-     <div class="z-100 flex sm:pl-20 items-end space-x-1">
+     <div class="flex sm:pl-20 items-end space-x-1">
         <router-link class="floating" :to="{name:item.route.name}" v-for="(item, index) in tabs" :key="index">
             <div @click="selectedTab = index" :class="{'bg-gray-900 bg-opacity-25 transition duration-75 transform -translate-y-4':index == selectedTab}" v-bot:text="item.title" class=" hidden  sm:flex sm:flex-wrap sm:h-32 w-1/4 sm:w-24 bg-white bg-opacity-5 shadow-3xl hover:bg-opacity-25 transform hover:-translate-y-4  items-center justify-center p-4" >
                 <ic :class="{'text-gray-200':index == selectedTab}" class="w-full icon-md text-white" :icon="item.icon"/>

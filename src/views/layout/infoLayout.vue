@@ -1,11 +1,11 @@
 <template>
-<div class="h-screen bg-gray-200 z-90 relative">
+<div class="sublayout w-full h-full">
     <!-- Footer -->
     <!-- <transition-group enter-active-class="animate__animated animate__fadeIn" leave-active-class="animate__animated animate__fadeOut"> -->
-        <div class="hidden sm:block fixed bottom-10 left-10 " :key="'1'">
+        <div class="z-100 fixed bottom-10 left-10" :key="'1'">
             <tabs/>
         </div>
-        <div class="sm:hidden fixed bottom-0 w-screen  inset-x-0  bg-gray-600  flex shadow-md pt-2 pb-4 bg-opacity-90" :key="'2'">
+        <div class="z-100 sm:hidden fixed bottom-0 w-screen  inset-x-0  bg-gray-600  flex shadow-md pt-2 pb-4 bg-opacity-90" :key="'2'">
             <div class="flex w-full justify-center" v-for="(item, index) in tabs" :key="index">
                 <router-link class="text-gray-500" :to="{name:item.route.name}" >
                     <div :class="{'text-black transform scale-105 transition duration-150 ease-in-out':index==active}" @click="active=index">
@@ -17,9 +17,9 @@
         </div>
     <!-- </transition-group> -->
     <!-- END Footer -->
-    <div class="h-full w-auto">
+    <div class="h-full w-full">
         <transition name="animate">
-            <router-view class="z-50 h-full overflow-hidden"></router-view>
+            <router-view class="h-full overflow-hidden"></router-view>
         </transition>
     </div>
 

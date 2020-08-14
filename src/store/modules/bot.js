@@ -6,7 +6,8 @@ const state = {
             show: true
         },
         moveable:true,
-        avatar:'botv2'
+        avatar:'botv2',
+        hidden:true
   }
   const mutations = {
     SET_BOT:(state,payload)=>{
@@ -36,6 +37,9 @@ const state = {
       state.avatar = payload
       
     },
+    SET_BOT_HIDDEN:(state,payload)=>{
+      state.hidden = payload
+    }
 
   }
   const actions = {
@@ -57,6 +61,9 @@ const state = {
     setBotAvatar({commit,dispatch},payload){
         commit('SET_BOT_AVATAR',payload)
     },
+    setBotHidden({commit,dispatch},payload){
+        commit('SET_BOT_HIDDEN',payload)
+    }
 
   }
   
@@ -65,7 +72,8 @@ const state = {
     position: state => state.position,
     moveable: state => state.moveable,
     terminal: state => state.terminal,
-    avatar: state => state.avatar
+    avatar: state => state.avatar,
+    hidden: state => state.hidden
   }
   
   export default {
