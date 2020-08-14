@@ -94,7 +94,7 @@ const state = {
   tabs:[
     {
       title:'Home',
-      icon:'face',
+      icon:'ic_home',
       route: {
               name:'Home-Index',
               path:'/'
@@ -106,7 +106,7 @@ const state = {
     },
     {
       title:'Service',
-      icon:'integration_instructions',
+      icon:'ic_coding',
       route: {
         name:'Service',
         path:'/service'
@@ -114,7 +114,7 @@ const state = {
     },
     {
       title:'Product',
-      icon:'shopping_bag',
+      icon:'ic_chip',
       route: {
         name:'Product',
         path:'/product'
@@ -122,7 +122,7 @@ const state = {
     },
     {
       title:'More',
-      icon:'vertical_split',
+      icon:'ic_more',
       route: {
         name:'More',
         path:'/more'

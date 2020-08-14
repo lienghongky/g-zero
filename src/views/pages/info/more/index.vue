@@ -14,7 +14,7 @@
                 </router-link>
             </div>
             <div class="w-full sm:w-1/2 flex flex-col justify-center items-start py-20 space-y-4">
-                <lottie path="city" :loop="true" :autoPlay="true" :loopDelayMin="0" :loopDelayMax="0" :speed="1" :height="300" :width="400" />
+                <lottie path="botHightLight" :loop="true" :autoPlay="true" :loopDelayMin="0" :loopDelayMax="0" :speed="1" :height="300" :width="400" />
             </div>
         </div>
             

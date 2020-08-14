@@ -8,7 +8,7 @@
                 <div class=" w-64 h-80 floating">
                     <div class="shadow-xl rounded-xl bg-white w-full h-full">
                             <div  class="transition duration-500 ease-in-out hover:shadow-lg border-solid border-6 sm:border-10  border-white h-2/3 rounded-xl overflow-hidden bg-gray-200 flex justify-center items-center ">
-                                <img class="object-cover h-full w-full" src="@/assets/images/profile.png" alt="">
+                                <img class="object-cover h-full w-full" src="@/assets/images/profile2.png" alt="">
                             </div>
                             <h3 class="text-lg mt-4 m-0 text-gray-700 ">Lieng Hongky</h3>
                             <p class="text-sm m-1 text-gray-700">Mobile App Developer</p>

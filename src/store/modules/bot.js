@@ -1,5 +1,5 @@
 const state = {
-        botData:{messages:'Click me to let me help! I can show you around!'},
+        botData:{messages:'',html:'<p>Hello! I can show you around</p>'},
         position:{x:0,y:0},
         element:{},
         terminal:{
@@ -17,7 +17,7 @@ const state = {
       }else if (state.botData.html != null && state.botData.html != ''){
         //   state.terminal.show = true
       }else{
-        // state.terminal.show = false
+        //   state.terminal.show = false
       }
     },
     SET_BOT_POSITION:(state,payload)=>{

@@ -8,9 +8,9 @@
         <div class="z-100 sm:hidden fixed bottom-0 w-screen  inset-x-0  bg-gray-600  flex shadow-md pt-2 pb-4 bg-opacity-90" :key="'2'">
             <div class="flex w-full justify-center" v-for="(item, index) in tabs" :key="index">
                 <router-link class="text-gray-500" :to="{name:item.route.name}" >
-                    <div :class="{'text-black transform scale-105 transition duration-150 ease-in-out':index==active}" @click="active=index">
-                        <ic :icon="item.icon" />
-                        <p class="text-xs m-0 p-0">{{item.title}}</p>
+                    <div :class="{'text-gray-900 transform scale-105 transition duration-150 ease-in-out':index==active}" @click="active=index">
+                        <ic :class="{'text-gray-900':index==active}" class="text-gray-700" :icon="item.icon" />
+                        <p class="text-xs m-0 p-0 text-gray-700">{{item.title}}</p>
                     </div>
                 </router-link>
             </div>
@@ -58,11 +58,11 @@ export default {
 
 <style scoped>
 .animate-enter-active{
-  animation: in 1s ease-in-out;
-  animation-delay: 1s;
+  animation: in .7s ease-in-out;
+  animation-delay: .7s;
 }
 .animate-leave-active {
-    animation: out 1s ease-in-out;
+    animation: out .7s ease-in-out;
 
     
  }

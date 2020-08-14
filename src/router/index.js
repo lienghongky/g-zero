@@ -1,13 +1,14 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import layout from '@/views/layout';
-import infoLayout from '@/views/layout/infoLayout';
+import layout from /* webpackChunkName: "layout" */ '@/views/layout';
+import infoLayout from /* webpackChunkName: "subLayout" */ '@/views/layout/infoLayout';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path:'/',
+    redirect: '/info',
     component:layout,
     children: [
       {
@@ -57,7 +58,7 @@ const routes = [
   },
   {
     path: '*',
-    redirect: '/'
+    redirect: '/about'
   }
 ];
 

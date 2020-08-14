@@ -31,7 +31,7 @@
                 </div>
                 <div class="hidden sm:block p-2 self-center ">
                     <router-link v-bot:html="item.bot.html" class="block my-2 text-black" :to="'/'" v-for="(item, index) in subTabs" :key="index">
-                          <ic class="text-gray-800 hover:text-gray-200 icon-sm py-2 " :icon="item.icon"/>
+                          <ic class="text-gray-800 hover:text-gray-300 icon-sm py-2 " :icon="item.icon"/>
                     </router-link>
                 </div>
             </div>

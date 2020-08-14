@@ -1,5 +1,5 @@
 <template>
-<div @click="lockBot" class="robot z-200">
+<div @click="lockBot" @dblclick="hideBot" class="robot z-200">
     <lottie :path="avatar" :loop="true" :autoPlay="true" :loopDelayMin="0" :loopDelayMax="0" :speed="1" :height="100" :width="100" />
 </div>
 </template>
@@ -109,6 +109,7 @@ export default {
         }
     },
     mounted() {
+        
         document.addEventListener('copy', (e) => {
             var text = window.getSelection().toString().replace(/[\n\r]+/g, '');
             this.$store.dispatch('Bot/setBot',{messages:text})
@@ -158,6 +159,7 @@ export default {
         this.move()
     },
     methods: {
+
         emitMoveEvent() {
             this.$emit('onBotMove', {
                 botPosition: this.translatedPosition,
@@ -206,8 +208,14 @@ export default {
             }
         },
         lockBot() {
-            this.$store.dispatch('Bot/setBot',{messages:"Tap on me to unlock me! please!"})
+            var botData = !this.moveable ? {messages:"Tap on me to unlock me! please!"}:{messages:"Double tap on me! if I'm annoying😥"}
+            this.$store.dispatch('Bot/setBot',botData)
             this.$store.dispatch('Bot/setBotMoveable', !this.moveable)
+        },
+        hideBot(){
+            var botData = !this.moveable ? {messages:"Tap on me to unlock me! please!"}:{messages:"Double tap on me! if I'm annoying😥"}
+            this.$store.dispatch('Bot/setBot',botData)
+            this.$store.dispatch('Bot/setBotHidden',true)
         },
         copyToClipboard(text) {
                 var textarea = document.createElement("textarea");
