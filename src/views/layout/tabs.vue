@@ -1,9 +1,10 @@
 <template>
-     <div class="flex sm:pl-20 items-end space-x-1">
-        <router-link class="floating" :to="{name:item.route.name}" v-for="(item, index) in tabs" :key="index">
-            <div @click="selectedTab = index" :class="{'bg-gray-900 bg-opacity-25 transition duration-75 transform -translate-y-4':index == selectedTab}" v-bot:text="item.title" class=" hidden  sm:flex sm:flex-wrap sm:h-24 w-1/4 sm:w-20 bg-white bg-opacity-90  hover:bg-opacity-25 shadow-3xl transform hover:-translate-y-4  items-center justify-center p-4" >
-                <ic :class="{'text-gray-800':index == selectedTab}" class="w-full icon-md text-gray-700" :icon="item.icon"/>
-                <p  :class="{'text-gray-800':index == selectedTab}" class="w-full text-sm m-0 py-2 text-gray-700 text-center">{{item.title}}</p>
+     <div class="flex items-end space-x-1">
+        <router-link class="floating-sm" :to="{name:item.route.name}" v-for="(item, index) in tabs" :key="index">
+            <div @click="$emit('input',index)" :class="{'bg-gray-300 bg-opacity-90 transition duration-75 transform -translate-y-4':index == value}" v-bot:text="item.title" class="hidden  sm:flex sm:flex-wrap sm:h-16 w-1/4 sm:w-10 bg-gray-200 hover:bg-gray-300 shadow-3xl transform hover:-translate-y-4  items-center justify-center p-4 rounded-sm" >
+                <ic :class="{'text-gray-200':index == value}" class="w-full icon-sm text-gray-700" :icon="item.icon"/>
+                <p :class="{'text-white':index == value}" class="w-full text-sm m-0 py-2 text-gray-700 text-center">{{item.title}}</p>
+                <div v-if="index == value" class="absolute bottom-0 inset-x-0 bg-gray-700 h-1"></div>
             </div>
         </router-link>
     </div>
@@ -13,15 +14,27 @@
 <script>
 import { mapGetters } from 'vuex';
     export default {
+        props:{
+            value: {
+                type: null,
+                default: 0
+            },
+            tabs: {
+                type: Array,
+                default: []
+            }
+        },
         data(){
             return {
-                selectedTab:0
+              hidden:true
             }
         },
         computed:{
-            ...mapGetters({
-                tabs: 'App/tabs'
-            })
+        },
+        methods:{
+            show(){
+                this.hidden = !this.show
+            }
         }
     }
 </script>

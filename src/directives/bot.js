@@ -7,7 +7,7 @@ export const bot =  {
             //console.log(el.getBoundingClientRect())
             var x = el.getBoundingClientRect().right;
             var y = el.getBoundingClientRect().bottom || 200;
-            console.log(x,y)
+
             vnode.context.$store.dispatch('Bot/setBotPosition',{x:x,y:y})
         }
     },

@@ -1,8 +1,7 @@
 <template>
     <div>
-     <transition-group name="flaot"  tag="div" class="scroll-none w-full flex-1 flex flex-wrap items-center self-center justify-center sm:justify-start">
-           
-                    <div class="transition w-32 h-32 sm:w-32 sm:h-48 p-1 py-2 sm:p-2 float" v-for="(item, index) in hightlights" :key="item.title">
+     <transition-group name="flaot"  tag="div" class="scroll-none  flex-1 flex flex-wrap items-center self-center justify-center sm:justify-start">
+                    <div :class="{'transition duration-75 transform translate-y-10': index = 0}" class="transition w-32 h-32 sm:w-32 sm:h-48 p-1 py-2 sm:p-2 float" v-for="(item, index) in hightlights" :key="item.title">
                         <div class="shadow-xl rounded-xl bg-white w-full h-full">
                             <div :class="item.background" class="transition duration-500 ease-in-out hover:shadow-lg border-solid border-6 sm:border-10  border-white h-haft rounded-xl overflow-hidden bg-gray-200 flex justify-center items-center ">
                                 <ic class="icon-md sm:icon-lg" :class="item.color" :icon="item.icon"/>

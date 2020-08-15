@@ -50,6 +50,7 @@ const state = {
       color:'text-white',
       background:'bg-facebook',
       title:'Facebook',
+      url:'',
       bot:{
         html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">Hongky</span></p>'
       }
@@ -59,6 +60,7 @@ const state = {
       color:'text-white',
       background:'bg-instagram',
       title:'Instagram',
+      url:'',
       bot:{
         html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">@hongkydev</span></p>'
       }
@@ -68,6 +70,7 @@ const state = {
       color:'text-white',
       background:'bg-linkedin',
       title:'Linkedin',
+      url:'',
       bot:{
         html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">Lieng Hongky</span></p>'
       }
@@ -77,6 +80,7 @@ const state = {
       color:'text-white',
       background:'bg-telegram',
       title:'Telegram',
+      url:'',
       bot:{
         html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">t.me/hongky.dev</span></p>'
       }
@@ -86,6 +90,7 @@ const state = {
       color:'text-white',
       background:'bg-twitter',
       title:'Tweeter',
+      url:'',
       bot:{
         html:'<p class="m-0 text-sm text-white">Profile:<span class="text-sm text-white font-bold">Hongky Lieng</span></p>'
       }
@@ -126,7 +131,20 @@ const state = {
       route: {
         name:'More',
         path:'/more'
-        }
+        },
+      
+    },
+    {
+      title:'Me',
+      icon:'face',
+      route: {
+        name:'About-Me',
+        path:'/aboutme'
+        },
+      bot:{
+
+      }
+      
     }
   ],
   bot:{

@@ -37,6 +37,11 @@ const routes = [
             path:'more',
             name:'More',
             component:() => import(/* webpackChunkName: "more" */'../views/pages/info/more')
+          },
+          {
+            path:'aboutme',
+            name:'About-Me',
+            component:() => import(/* webpackChunkName: "more" */'../views/pages/info/about')
           }
         ]
       },
@@ -44,7 +49,7 @@ const routes = [
   },
   {
     path: "/about",
-    name: "About",
+    // name: "About",
     meta: {title:'About', icon: 'face'},
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route

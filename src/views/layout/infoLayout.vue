@@ -2,15 +2,15 @@
 <div class="sublayout w-full h-full">
     <!-- Footer -->
     <!-- <transition-group enter-active-class="animate__animated animate__fadeIn" leave-active-class="animate__animated animate__fadeOut"> -->
-        <div class="z-100 fixed bottom-10 left-10" :key="'1'">
-            <tabs/>
+        <div class="z-100 fixed bottom-2 left-10 sm:pl-10" :key="'1'">
+            <tabs v-model="selectedTab" :tabs="tabs"/>
         </div>
         <div class="z-100 sm:hidden fixed bottom-0 w-screen  inset-x-0  bg-gray-600  flex shadow-md pt-2 pb-4 bg-opacity-90" :key="'2'">
             <div class="flex w-full justify-center" v-for="(item, index) in tabs" :key="index">
                 <router-link class="text-gray-500" :to="{name:item.route.name}" >
-                    <div :class="{'text-gray-900 transform scale-105 transition duration-150 ease-in-out':index==active}" @click="active=index">
-                        <ic :class="{'text-gray-900':index==active}" class="text-gray-700" :icon="item.icon" />
-                        <p class="text-xs m-0 p-0 text-gray-700">{{item.title}}</p>
+                    <div :class="{'text-gray-900 transform scale-105 transition duration-150 ease-in-out':index==selectedTab}" @click="selectedTab=index">
+                        <ic :class="{'text-gray-900':index==selectedTab}" class="text-gray-700" :icon="item.icon" />
+                        <p :class="{'text-gray-900':index==selectedTab}" class="text-xs m-0 p-0 text-gray-700">{{item.title}}</p>
                     </div>
                 </router-link>
             </div>
@@ -39,7 +39,7 @@ export default {
         Tabs
     },
     data: () => ({
-        active: 0
+        selectedTab:0
     }),
     computed:{
         ...mapGetters({

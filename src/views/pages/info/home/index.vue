@@ -1,5 +1,5 @@
 <template>
-<div class="page bg-gray-200 overflow-y-scroll content-between z-50">
+<div class="page bg-gray-600 overflow-y-scroll content-between z-50">
     <div class="flex flex-wrap sm:flex-no-wrap justify-center items-center  ">
         <div class="w-full sm:w-1/2  sm:h-full sm:pl-20 pt-20 sm:pt-0">
             <h1 class="text-4xl">Welcome!</h1>
