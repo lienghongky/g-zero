@@ -7,7 +7,7 @@ const state = {
         },
         moveable:true,
         avatar:'botv2',
-        hidden:true
+        hidden:false
   }
   const mutations = {
     SET_BOT:(state,payload)=>{

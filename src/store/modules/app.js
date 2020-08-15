@@ -136,7 +136,7 @@ const state = {
     },
     {
       title:'Me',
-      icon:'face',
+      icon:'ic_me',
       route: {
         name:'About-Me',
         path:'/aboutme'

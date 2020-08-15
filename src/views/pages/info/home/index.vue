@@ -1,9 +1,9 @@
 <template>
 <div class="page bg-gray-600 overflow-y-scroll content-between z-50">
     <div class="flex flex-wrap sm:flex-no-wrap justify-center items-center  ">
-        <div class="w-full sm:w-1/2  sm:h-full sm:pl-20 pt-20 sm:pt-0">
-            <h1 class="text-4xl">Welcome!</h1>
-            <h1 class="text-6xl text-white">G-zero <span v-bot:text.init="'CITY Plan You may use special comments to disable some warnings.Use <br/>Use to ignore all warnings in a file.'"></span>!</h1>
+        <div class="w-full sm:w-1/2  sm:h-full sm:pl-20 pt-20 sm:pt-0 text-left">
+            <h1 class="text-4xl">Hello!</h1>
+            <h1 class="text-4xl text-white">Welcome to G-zero The Site<span v-bot:text.init="'CITY Plan You may use special comments to disable some warnings.Use <br/>Use to ignore all warnings in a file.'"></span>!</h1>
              <!-- <div class="flex rounded-full bg-gray-800 p-2 relative">
                 <vs-input class="w-full"  placeholder="Name" />
                 <div class="absolute right-0 -top-2 rounded-lg w-10 h-10 flex items-center justify-center bg-gray-600 shadow-lg">
