@@ -14,10 +14,14 @@ const routes = [
       {
         path: "info",
         name: "Home",
-        redirect: '/info/index',
+        redirect: '/info/planet',
         component: infoLayout,
         meta: {title:'Home', icon: 'ic_linkedin'},
         children: [
+          {
+            path:'planet',
+            component:() => import(/* webpackChunkName: "planet" */ '../views/pages/info/planet')
+          },
           {
             path:'index',
             name:'Home-Index',
