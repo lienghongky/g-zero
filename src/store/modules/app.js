@@ -1,4 +1,8 @@
 const state = {
+  navStyle:{
+    styles:null,
+    classes:null
+  },
   subTabs: [{
     icon:'ic_facebook_solid',
     color:'text-white',
@@ -149,10 +153,14 @@ const state = {
   ]
 }
 const mutations = {
-
+  SET_NAV:(state,payload)=>{
+    state.nav = payload
+  }
 }
 const actions = {
-
+  setNav({commit,dispatch},payload){
+    commit('SET_NAV',payload)
+  },
 
 }
 
@@ -160,6 +168,7 @@ const getters = {
   hightlights: state => state.hightlights,
   tabs: state => state.tabs,
   subTabs: state => state.subTabs,
+  nav: state => state.nav,
   
 }
 

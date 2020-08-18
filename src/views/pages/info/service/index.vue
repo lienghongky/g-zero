@@ -3,12 +3,13 @@
            <div class="flex flex-wrap sm:flex-no-wrap justify-center items-center py-10">
                 <div class="w-full sm:w-1/2  sm:h-full sm:pl-20 pt-20 sm:pt-0">
                     <h1 class="text-4xl text-gray-100">Services</h1>
-                    <h1 class="text-xl text-gray-400">Are you looking for services, Like any services? <span v-bot:text.init="'CITY Plan You may use special comments to disable some warnings.Use <br/>Use to ignore all warnings in a file.'"></span></h1>
+                    <h1 class="text-xl font-thin text-gray-400">Are you looking for App/Web/System development services? <span v-bot:text.init="'CITY Plan You may use special comments to disable some warnings.Use <br/>Use to ignore all warnings in a file.'"></span></h1>
                 </div>
                 <div class="w-full sm:w-1/2 flex flex-col justify-center items-start py-20 space-y-4">
                     <lottie path="app" :loop="true" :autoPlay="true" :loopDelayMin="0" :loopDelayMax="0" :speed="1" :height="300" :width="300" />
                 </div>
             </div>
+            <h1 class="text-gray-400 text-lg">Our Previous Projects</h1>
             <div  class="p-8 pl-16 py-32 " v-for="(item, index) in apps" :key="index">
                 <app-demo :app="item" :class="{'flex-row-reverse':(index == 0 || index ==2 || index ==4)}"/>
             </div>

@@ -18,7 +18,7 @@
     <!-- </transition-group> -->
     <!-- END Footer -->
     <div class="h-full w-full">
-        <transition name="animate">
+        <transition mode="out-in" name="animate">
             <router-view class="h-full overflow-hidden"></router-view>
         </transition>
     </div>
@@ -58,11 +58,10 @@ export default {
 
 <style scoped>
 .animate-enter-active{
-  animation: in .7s ease-in-out;
-  animation-delay: .7s;
+  animation: in .5s ease-in-out;
 }
 .animate-leave-active {
-    animation: out .7s ease-in-out;
+    animation: out .5s ease-in-out;
 
     
  }

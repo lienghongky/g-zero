@@ -53,7 +53,7 @@ export default {
       scaleMode: "centerCrop",
       clearCanvas: true,
       progressiveLoad: false,
-      hideOnTransparent: true
+      hideOnTransparent: false
     },
     anim: null,
     style: null

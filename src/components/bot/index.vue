@@ -208,12 +208,12 @@ export default {
             }
         },
         lockBot() {
-            var botData = !this.moveable ? {messages:"Tap on me to unlock me! please!"}:{messages:"Double tap on me! if I'm annoying😥"}
+            var botData = !this.moveable ? {messages:"Tap on me to lock me!"}:{messages:"Double tap on me! if I'm annoying😥"}
             this.$store.dispatch('Bot/setBot',botData)
             this.$store.dispatch('Bot/setBotMoveable', !this.moveable)
         },
         hideBot(){
-            var botData = !this.moveable ? {messages:"Tap on me to unlock me! please!"}:{messages:"Double tap on me! if I'm annoying😥"}
+            var botData = !this.moveable ? {messages:"Tap on me to lock me!"}:{messages:"Double tap on me! if I'm annoying😥"}
             this.$store.dispatch('Bot/setBot',botData)
             this.$store.dispatch('Bot/setBotHidden',true)
         },

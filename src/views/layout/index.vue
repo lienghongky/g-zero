@@ -65,7 +65,11 @@ export default {
     computed:{
         ...mapGetters({
             tabs:'App/tabs',
-            subTabs:'App/subTabs'
+            subTabs:'App/subTabs',
+            nav:'App/nav',
+            navClass:()=>{
+                return this.nav.classes
+            }
         }),
         routes(){
             return this.$router.options.routes.filter(e => e.meta != undefined)

@@ -21,6 +21,12 @@ Vue.use(device)
 
 // Lottie
 
+// Filters
+import * as filters from '@/filters' // global filters
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
+
 
 
 // Using Vuesax

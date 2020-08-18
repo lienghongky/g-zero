@@ -4,9 +4,9 @@
         <!-- <sketch-fab :obj="'c632823b6c204797bd9b95dbd9f53a06'" class="w-full h-full"/> -->
     </div>
     <div class="flex flex-wrap sm:flex-no-wrap justify-center items-center  ">
-        <div class="w-full sm:w-1/2  sm:h-full sm:pl-20 pt-20 sm:pt-0 text-left">
-            <h1 class="text-4xl z-100">Hello!</h1>
-            <h1 class="text-4xl text-white z-100">Welcome to G-zero The Site<span v-bot:text.init="'CITY Plan You may use special comments to disable some warnings.Use <br/>Use to ignore all warnings in a file.'"></span>!</h1>
+        <div class="w-full sm:w-1/2  sm:h-full p-2 sm:pl-20 pt-20 sm:pt-0 text-left">
+            <h1 class="text-xl m-0 sm:text-4xl z-100">Hello!</h1>
+            <h1 class="text-lg m-0 sm:text-4xl text-white z-100">Welcome to G-zero The Site<span v-bot:text.init="'CITY Plan You may use special comments to disable some warnings.Use <br/>Use to ignore all warnings in a file.'"></span>!</h1>
             
             <!-- <div class="flex rounded-full bg-gray-800 p-2 relative">
                 <vs-input class="w-full"  placeholder="Name" />

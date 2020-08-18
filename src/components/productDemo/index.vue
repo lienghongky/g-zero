@@ -1,13 +1,13 @@
 <template>
-    <div class="flex flex-wrap bg-blue-900 pl-16 h-full">
+    <div class="flex flex-wrap bg-blue-900 pl-0 md:pl-16 h-full">
         <div class="w-full md:w-1/2 lg:w-2/3 flex items-center justify-center">
             <div class="">
                 <img class="w-80 h-80 py-16" src="@/assets/images/products/mx/mx-ver.png" alt="">
             </div>
         </div>
-        <div class="w-full rounded-tl-lg sm:rounded-none md:w-1/2 lg:w-1/3 flex bg-gray-200 py-10">
+        <div class="w-full md:w-1/2 lg:w-1/3 rounded-tl-lg sm:rounded-none  flex bg-gray-200 py-10">
             <div class="h-full">
-                <div class="p-8 py-10">
+                <div class="pl-8 pr-4 py-10">
                     <div class="relative bg-white bg-opacity-50 rounded-xl shadow-3xl">
                         <div class="pl-24 p-4 text-left text-gray-900">
                             <h4 class="text-md  m-0">Mx Master S3 for mac</h4>
@@ -27,7 +27,7 @@
                                 </div>
                             </div>
                         </div>
-                        <img style="left:-120px" class="absolute -top-1/2 w-64 h-64 object-contain" :src="getImgUrl('images/products/mx/mx.webp')" alt="">
+                        <img style="left:-5rem" class="absolute -top-1/2 w-56 h-56 object-contain" :src="getImgUrl('images/products/mx/mx.webp')" alt="">
                     </div>
                 </div>
                 <div class="text-left p-4">
