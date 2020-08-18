@@ -8,7 +8,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path:'/',
-    redirect: '/info',
+    redirect: '/info/index',
     component:layout,
     children: [
       {
@@ -20,6 +20,7 @@ const routes = [
         children: [
           {
             path:'planet',
+            name: 'Planet',
             component:() => import(/* webpackChunkName: "planet" */ '../views/pages/info/planet')
           },
           {
@@ -49,6 +50,18 @@ const routes = [
           }
         ]
       },
+    ]
+  },
+  {
+    path:'/earth',
+    meta: {title:'Earth 22', icon: 'logo'},
+    component: layout,
+    children:[
+      {
+      path:'',
+      name: 'Earth',
+      component:() => import(/* webpackChunkName: "earth" */ '../views/pages/info/planet'),
+      }
     ]
   },
   {

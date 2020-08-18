@@ -18,6 +18,11 @@
                             </div> -->
                     </div>
                 </div>
+                <div class="w-full flex justify-center">
+                                    <vs-button border @click="active=!active">
+                                        CV
+                                    </vs-button>
+                </div>
                 <div class="w-full flex items-center justify-center space-x-4 md:space-x-4">
                     <a :href="item.url" target="_blank" class="floating-sm" v-for="(item, index) in hightlights" :key="index">
                         <div  class="group" v-bot.text="item.title">
@@ -26,29 +31,92 @@
                         </div>
                     </a>
                 </div>
+                
             </div>
         </div>
         <div class="flex w-full justify-end self-end sm:px-20 sm:pb-20">
             <!-- <feature/> -->
         </div>
+      <vs-dialog blur v-model="active">
+        <template #header>
+          <h4 class="not-margin">
+            Thank you for your interest!
+          </h4>
+        </template>
+
+
+        <div class="w-full flex flex-col content-between space-y-4">
+          <vs-input class="input-view" v-model="value1" placeholder="Full Name">
+                    <template #icon>
+                        <ic class="text-gray-700" icon="ic_me" />
+                    </template>
+                </vs-input>
+                <vs-input class="input-view" v-model="value1" placeholder="Email">
+                    <template #icon>
+                        <ic class="text-gray-700" icon="ic_me" />
+                    </template>
+                </vs-input>
+                <vs-input class="input-view" v-model="value1" placeholder="Company">
+                    <template #icon>
+                        <ic class="text-gray-700" icon="ic_me" />
+                    </template>
+                </vs-input>
+                <vs-input class="input-view" v-model="value1" placeholder="Company Site">
+                    <template #icon>
+                        <ic class="text-gray-700" icon="ic_me" />
+                    </template>
+                </vs-input>
+                <vs-input class="input-view" v-model="value1" placeholder="Note">
+                    <template #icon>
+                        <ic class="text-gray-700" icon="ic_me" />
+                    </template>
+                </vs-input>
+          <div class="flex justify-center">
+            I will get back to you latter!
+          </div>
+        </div>
+
+        <template #footer>
+          <div class="footer-dialog">
+            <vs-button block @click="active = !active">
+              Request CV
+            </vs-button>
+          </div>
+        </template>
+      </vs-dialog>
     </div>
 </template>
 
 <script>
     import Feature from './components/feature'
+    import CvForm from './components/cvForm';
     import { mapGetters } from 'vuex'
     export default {
         components:{
-            Feature
+            Feature,
+            CvForm
+        },
+        data(){
+            return{
+                active:false
+            }
         },
          computed:{
              ...mapGetters({
                 hightlights:'App/hightlights'
                 }),
+         },
+         methods:{
+             showCv(){
+
+             }
          }
     }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+input-view {
+    width: 100%;
+}
 
 </style>

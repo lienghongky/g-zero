@@ -146,34 +146,13 @@ const state = {
       }
       
     }
-  ],
-  bot:{
-    botData:{messages:'Click me to let me help! I can show you around!'},
-    position:{},
-    moveable:true
-  }
+  ]
 }
 const mutations = {
-  SET_BOT:(state,payload)=>{
-    state.bot.botData = payload
-  },
-  SET_BOT_POSITION:(state,payload)=>{
-    state.bot.position = payload
-  },
-  SET_BOT_MOVEABLE:(state,payload)=>{
-    state.bot.moveable = payload
-  }
+
 }
 const actions = {
-  setBot({commit,dispatch},payload){
-    commit('SET_BOT',payload)
-  },
-  setBotPosition({commit,dispatch},payload){
-    commit('SET_BOT_POSITION',payload)
-  },
-  setBotMoveable({commit,dispatch},payload){
-    commit('SET_BOT_MOVEABLE',payload)
-  }
+
 
 }
 
@@ -181,9 +160,7 @@ const getters = {
   hightlights: state => state.hightlights,
   tabs: state => state.tabs,
   subTabs: state => state.subTabs,
-  bot: state => state.bot.botData,
-  botPosition: state => state.bot.position,
-  botMoveable: state => state.bot.moveable
+  
 }
 
 export default {

@@ -2,7 +2,7 @@
 <div class="h-full w-full bg-gray-700 z-100">
     <!-- Header -->
     <transition enter-active-class="animate__animated animate__rotateInDownLeft" leave-active-class="animate__animated animate__rotateInUpLeft">
-        <div class="z-100 fixed w-screen bg-transparent sm:absolute sm:block sm:w-auto sm:h-screen sm:inset-y-0 left-0  sm:bg-white sm:bg-opacity-0 sm:shadow-lg">
+        <div class="z-100 fixed w-screen bg-transparent sm:absolute sm:block sm:w-auto sm:h-screen sm:inset-y-0 left-0  sm:bg-white sm:bg-opacity-90 sm:shadow-lg">
             <div class="flex flex-row sm:flex-col justify-between h-full">
                 <div class="p-1 sm:px-2 sm:pt-2 flex flex-col justify-center">
                     <!-- mobile only -->

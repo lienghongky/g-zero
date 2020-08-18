@@ -6,7 +6,13 @@
     <div class="flex flex-wrap sm:flex-no-wrap justify-center items-center  ">
         <div class="w-full sm:w-1/2  sm:h-full sm:pl-20 pt-20 sm:pt-0 text-left">
             <h1 class="text-4xl z-100">Hello!</h1>
-            <h1 class="text-4xl text-white z-100">Welcome to G-zero The Site<span v-bot:text.init="'CITY Plan You may use special comments to disable some warnings.Use <br/>Use to ignore all warnings in a file.'"></span>!</h1>
+            <h1 class="text-4xl text-white z-100">Welcome to Earth 22<span v-bot:text.init="'CITY Plan You may use special comments to disable some warnings.Use <br/>Use to ignore all warnings in a file.'"></span>!</h1>
+        </div>
+    </div>
+    <div class="fixed bottom-10 right-10 flex items-end">
+        <div class=" px-8">
+            <h1 class="text-4xl text-gray-900 z-100 m-0">Earth 22<span v-bot:text.init="'Earth 22 is nearly the as our Earth except the fect that it has light shining in the dark space'"></span></h1>
+            <h1 class="text-tiny font-thin z-100 m-0">We should take a good care for our current Earth</h1>
         </div>
     </div>
 </div>
