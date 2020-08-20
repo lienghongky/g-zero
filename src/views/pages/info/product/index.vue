@@ -18,7 +18,7 @@
             <lottie path="smartCity" :loop="true" :autoPlay="true" :loopDelayMin="0" :loopDelayMax="0" :speed="1" :height="200" :width="400" />
         </div>
     </div>
-    <div class="flex flex-wrap pl-14 my-4">
+    <!-- <div class="flex flex-wrap pl-14 my-4">
         <div class="w-full md:w-1/2 lg:w-2/3 flex items-center justify-center">
             <sketch-fab :obj="'c632823b6c204797bd9b95dbd9f53a06'" class="w-full h-full" />
         </div>
@@ -71,7 +71,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="py-1" v-for="(item, index) in 4" :key="index">
         <product-demo />
     </div>
